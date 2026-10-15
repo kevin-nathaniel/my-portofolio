@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "title": "Jo Kevin Nathaniel — Software Engineer & Infrastruktur TI",
+    "description": "Jo Kevin Nathaniel — software engineer yang berfokus pada infrastruktur TI dan keamanan. Proyek, pengalaman, dan kontak."
+  },
+  "site": {
+    "promptUser": "jo{'@'}portofolio"
+  },
+  "nav": {
+    "about": "tentang",
+    "experience": "pengalaman",
+    "stack": "stack",
+    "projects": "proyek",
+    "contact": "kontak"
+  },
+  "a11y": {
+    "locale": "Ganti bahasa",
+    "theme": "Alihkan mode gelap"
+  },
+  "hero": {
+    "path": "~/boot.sh",
+    "badge": "SISTEM AKTIF",
+    "role": "Software Engineer & Infrastruktur TI",
+    "name": "Jo Kevin Nathaniel",
+    "tagline": "Saya membangun sistem yang aman dan andal — dari aplikasi web sampai server yang menjaganya tetap berjalan.",
+    "ctaProjects": "lihat_proyek",
+    "ctaContact": "hubungi_saya"
+  },
+  "about": {
+    "promptPath": "about/about/",
+    "cmdWhoami": "whoami",
+    "whoami": "Software engineer yang bekerja di pengembangan web dan infrastruktur TI. Saya peduli pada sistem yang tetap hidup, tetap cepat, dan tetap aman. Zona nyaman saya ada di titik temu antara kode aplikasi, jaringan, server, dan posisi keamanannya.",
+    "cmdEducation": "cat education.txt",
+    "degree": "Sarjana Ilmu Komputer",
+    "school": "Universitas Gadjah Mada",
+    "period": "Agu 2020 – Jun 2024",
+    "note": "IPK 3.71 / 4.00"
+  },
+  "experience": {
+    "promptPath": "career/career/",
+    "cmd": "career --log",
+    "present": "Sekarang",
+    "items": [
+      {
+        "period": "Jan 2025 – Sekarang",
+        "role": "IT Infrastructure Engineer",
+        "company": "PT Data Nusantara Teknologi",
+        "location": "Yogyakarta",
+        "bullets": [
+          "Mengoperasikan dan memantau infrastruktur hibrida: server on-prem, segmentasi VLAN, dan VPS cloud di dua pusat data.",
+          "Mengotomasi provisioning dan patching dengan Ansible dan PowerShell, memangkas waktu setup manual sebesar 60%.",
+          "Mengelola firewall, VPN, dan kebijakan kontrol akses; memimpin simulasi respons phishing internal."
+        ]
+      },
+      {
+        "period": "Jul 2023 – Des 2024",
+        "role": "Software Engineer",
+        "company": "Sinar Digital Kreatif",
+        "location": "Remote",
+        "bullets": [
+          "Membangun dan memelihara dashboard internal serta REST API dengan Vue, TypeScript, dan Node.js.",
+          "Meng-container-kan deployment dengan Docker dan memasang CI pipeline, mengurangi waktu rilis dari jam menjadi menit.",
+          "Mengerasakan endpoint dan layanan web: TLS di semua lapis, rate limiting, audit dependensi, dan peninjauan log."
+        ]
+      },
+      {
+        "period": "Feb 2022 – Jun 2023",
+        "role": "Junior Web Developer",
+        "company": "Studio Rekayasa Web",
+        "location": "Yogyakarta",
+        "bullets": [
+          "Menyelesaikan situs klien dan panel admin dengan Vue dan Laravel.",
+          "Memigrasi admin PHP lama ke dashboard Vue berbasis peran yang dipakai harian oleh 40+ staf.",
+          "Menyiapkan hosting VPS Linux, Nginx, dan backup otomatis untuk setiap deployment klien."
+        ]
+      }
+    ]
+  },
+  "stack": {
+    "promptPath": "stack/stack/",
+    "groups": [
+      {
+        "cmd": "cat languages.txt",
+        "items": ["TypeScript", "JavaScript", "Python", "Go", "Bash", "SQL"]
+      },
+      {
+        "cmd": "cat frontend.txt",
+        "items": ["Vue", "Nuxt", "React", "Vite", "Tailwind CSS"]
+      },
+      {
+        "cmd": "cat backend.txt",
+        "items": ["Node.js", "Express", "PostgreSQL", "MySQL", "Redis", "REST"]
+      },
+      {
+        "cmd": "cat infrastructure.txt",
+        "items": ["Linux", "Docker", "Ansible", "Nginx", "VLAN", "VPN", "Firewall"]
+      },
+      {
+        "cmd": "cat security.txt",
+        "items": ["Hardening", "TLS", "IAM", "Wireshark", "Nmap", "OWASP Top 10"]
+      }
+    ]
+  },
+  "projects": {
+    "promptPath": "projects/projects/",
+    "cmdOpen": "ls ~/projects/open-source",
+    "cmdClient": "ls ~/projects/client-work",
+    "visit": "kunjungi",
+    "source": "sumber",
+    "openSource": [
+      {
+        "name": "PacketWatch",
+        "description": "Penganalisis trafik jaringan ringan yang menandai pola koneksi mencurigakan di satu subnet. Dibangun dengan Go dan dashboard terminal langsung.",
+        "link": "https://github.com/jokevin/packetwatch",
+        "source": "https://github.com/jokevin/packetwatch",
+        "tags": ["Go", "CLI", "Jaringan"]
+      },
+      {
+        "name": "Infra-as-Code Lab",
+        "description": "Homelab yang dapat direproduksi: Docker Compose, reverse proxy, stack monitoring, dan backup otomatis, semuanya didefinisikan di version control.",
+        "link": "",
+        "source": "https://github.com/jokevin/infra-lab",
+        "tags": ["Docker", "Ansible", "Monitoring"]
+      }
+    ],
+    "clientWork": [
+      {
+        "name": "Sentra Monitor",
+        "description": "Dashboard monitoring infrastruktur internal untuk firma logistik: status server langsung, alerting, dan laporan uptime.",
+        "link": "https://sentra-monitor.example.com",
+        "source": "",
+        "tags": ["Vue", "Node.js", "WebSocket"]
+      },
+      {
+        "name": "Klinik Sehat Portal",
+        "description": "Portal penjadwalan pasien dengan akses berbasis peran untuk admin, dokter, dan staf resepsionis.",
+        "link": "https://klinik-sehat.example.com",
+        "source": "",
+        "tags": ["Nuxt", "PostgreSQL", "Auth"]
+      }
+    ],
+    "more": "# Studi kasus lain sedang disiapkan."
+  },
+  "contact": {
+    "promptPath": "contact/contact/",
+    "cmdEmail": "contact --email",
+    "cmdLinkedin": "contact --linkedin",
+    "blurb": "Terbuka untuk posisi software dan infrastruktur. Hubungi saya lewat email atau LinkedIn.",
+    "email": "jo.kevin.nathaniel{'@'}example.com",
+    "linkedin": "linkedin.com/in/jokevin",
+    "linkedinUrl": "https://www.linkedin.com/in/jokevin/",
+    "ctaEmail": "email_saya",
+    "ctaLinkedin": "pesan_linkedin"
+  },
+  "footer": {
+    "rights": "© 2026 Jo Kevin Nathaniel. Hak cipta dilindungi.",
+    "note": "Dibangun manual dengan Vue + Vite, bertema terminal."
+  }
+}

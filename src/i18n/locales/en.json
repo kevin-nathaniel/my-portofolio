@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "title": "Jo Kevin Nathaniel — Software Engineer & IT Infrastructure",
+    "description": "Jo Kevin Nathaniel — software engineer focused on IT infrastructure and security. Projects, experience, and contact."
+  },
+  "site": {
+    "promptUser": "jo{'@'}portfolio"
+  },
+  "nav": {
+    "about": "about",
+    "experience": "experience",
+    "stack": "stack",
+    "projects": "projects",
+    "contact": "contact"
+  },
+  "a11y": {
+    "locale": "Switch language",
+    "theme": "Toggle dark mode"
+  },
+  "hero": {
+    "path": "~/boot.sh",
+    "badge": "SYSTEM ONLINE",
+    "role": "Software Engineer & IT Infrastructure",
+    "name": "Jo Kevin Nathaniel",
+    "tagline": "I build secure, reliable systems — from the web app down to the server that keeps it running.",
+    "ctaProjects": "view_projects",
+    "ctaContact": "contact_me"
+  },
+  "about": {
+    "promptPath": "about/about/",
+    "cmdWhoami": "whoami",
+    "whoami": "Software engineer working across web development and IT infrastructure. I care about systems that stay up, stay fast, and stay secure. My happy place is where application code meets the network, the server, and the security posture underneath it.",
+    "cmdEducation": "cat education.txt",
+    "degree": "Bachelor of Computer Science",
+    "school": "Universitas Gadjah Mada",
+    "period": "Aug 2020 – Jun 2024",
+    "note": "GPA 3.71 / 4.00"
+  },
+  "experience": {
+    "promptPath": "career/career/",
+    "cmd": "career --log",
+    "present": "Present",
+    "items": [
+      {
+        "period": "Jan 2025 – Present",
+        "role": "IT Infrastructure Engineer",
+        "company": "PT Data Nusantara Teknologi",
+        "location": "Yogyakarta",
+        "bullets": [
+          "Operate and monitor hybrid infrastructure: on-prem servers, VLAN segmentation, and cloud VPS across two data centers.",
+          "Automate provisioning and patching with Ansible and PowerShell, cutting manual setup time by 60%.",
+          "Maintain firewall, VPN, and access-control policy; lead internal phishing-response drills."
+        ]
+      },
+      {
+        "period": "Jul 2023 – Dec 2024",
+        "role": "Software Engineer",
+        "company": "Sinar Digital Kreatif",
+        "location": "Remote",
+        "bullets": [
+          "Built and maintained internal dashboards and REST APIs with Vue, TypeScript, and Node.js.",
+          "Containerized deployments with Docker and set up CI pipelines, reducing release time from hours to minutes.",
+          "Harded endpoints and web services: TLS everywhere, rate limiting, dependency auditing, and log review."
+        ]
+      },
+      {
+        "period": "Feb 2022 – Jun 2023",
+        "role": "Junior Web Developer",
+        "company": "Studio Rekayasa Web",
+        "location": "Yogyakarta",
+        "bullets": [
+          "Delivered client sites and admin panels with Vue and Laravel.",
+          "Migrated a legacy PHP admin to a role-based Vue dashboard used daily by 40+ staff.",
+          "Set up Linux VPS hosting, Nginx, and automated backups for every client deployment."
+        ]
+      }
+    ]
+  },
+  "stack": {
+    "promptPath": "stack/stack/",
+    "groups": [
+      {
+        "cmd": "cat languages.txt",
+        "items": ["TypeScript", "JavaScript", "Python", "Go", "Bash", "SQL"]
+      },
+      {
+        "cmd": "cat frontend.txt",
+        "items": ["Vue", "Nuxt", "React", "Vite", "Tailwind CSS"]
+      },
+      {
+        "cmd": "cat backend.txt",
+        "items": ["Node.js", "Express", "PostgreSQL", "MySQL", "Redis", "REST"]
+      },
+      {
+        "cmd": "cat infrastructure.txt",
+        "items": ["Linux", "Docker", "Ansible", "Nginx", "VLAN", "VPN", "Firewall"]
+      },
+      {
+        "cmd": "cat security.txt",
+        "items": ["Hardening", "TLS", "IAM", "Wireshark", "Nmap", "OWASP Top 10"]
+      }
+    ]
+  },
+  "projects": {
+    "promptPath": "projects/projects/",
+    "cmdOpen": "ls ~/projects/open-source",
+    "cmdClient": "ls ~/projects/client-work",
+    "visit": "visit",
+    "source": "source",
+    "openSource": [
+      {
+        "name": "PacketWatch",
+        "description": "Lightweight network-traffic analyzer that flags unusual connection patterns on a subnet. Built with Go and a live terminal dashboard.",
+        "link": "https://github.com/jokevin/packetwatch",
+        "source": "https://github.com/jokevin/packetwatch",
+        "tags": ["Go", "CLI", "Networking"]
+      },
+      {
+        "name": "Infra-as-Code Lab",
+        "description": "Reproducible homelab: Docker Compose, reverse proxy, monitoring stack, and automated backups, all defined in version control.",
+        "link": "",
+        "source": "https://github.com/jokevin/infra-lab",
+        "tags": ["Docker", "Ansible", "Monitoring"]
+      }
+    ],
+    "clientWork": [
+      {
+        "name": "Sentra Monitor",
+        "description": "Internal infrastructure-monitoring dashboard for a logistics firm: live server status, alerting, and uptime reports.",
+        "link": "https://sentra-monitor.example.com",
+        "source": "",
+        "tags": ["Vue", "Node.js", "WebSocket"]
+      },
+      {
+        "name": "Klinik Sehat Portal",
+        "description": "Patient-scheduling portal with role-based access for admins, doctors, and reception staff.",
+        "link": "https://klinik-sehat.example.com",
+        "source": "",
+        "tags": ["Nuxt", "PostgreSQL", "Auth"]
+      }
+    ],
+    "more": "# More case studies are on the way."
+  },
+  "contact": {
+    "promptPath": "contact/contact/",
+    "cmdEmail": "contact --email",
+    "cmdLinkedin": "contact --linkedin",
+    "blurb": "Open to software and infrastructure roles. Reach me by email or on LinkedIn.",
+    "email": "jo.kevin.nathaniel{'@'}example.com",
+    "linkedin": "linkedin.com/in/jokevin",
+    "linkedinUrl": "https://www.linkedin.com/in/jokevin/",
+    "ctaEmail": "email_me",
+    "ctaLinkedin": "message_linkedin"
+  },
+  "footer": {
+    "rights": "© 2026 Jo Kevin Nathaniel. All rights reserved.",
+    "note": "Hand-built with Vue + Vite, themed after a terminal."
+  }
+}

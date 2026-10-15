@@ -1,0 +1,363 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Silkscreen pixel font, self-hosted, latin subset. */
+@font-face {
+  font-family: 'Silkscreen';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/silkscreen-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Silkscreen';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/silkscreen-700.woff2') format('woff2');
+}
+
+:root {
+  /* Light: phosphor paper — dark green ink on pale green paper. */
+  --background: #e9f2e9;
+  --foreground: #0b2415;
+  --card: #f4faf3;
+  --card-foreground: #0b2415;
+  --muted: #d7e6d6;
+  --muted-foreground: #3f6649;
+  --accent: #cde5cc;
+  --accent-foreground: #0b2415;
+  --border: #9dc09d;
+  --input: #9dc09d;
+  --ring: #15803d;
+  --primary: #0f5132;
+  --primary-foreground: #eafbee;
+  --destructive: #b91c1c;
+  --brand: #15803d;
+  --brand-strong: #166534;
+  --glow: rgba(21, 128, 61, 0);
+  --term-bg: #f4faf3;
+  --term-bar: #d7e6d6;
+  --grid-line: rgba(15, 81, 50, 0.07);
+  --scanline: rgba(11, 36, 21, 0.035);
+  --shadow-pixel: 4px 4px 0 #0b2415;
+  --shadow-pixel-sm: 2px 2px 0 #0b2415;
+
+  color-scheme: light;
+
+  --font-pixel: 'Silkscreen', 'Courier New', monospace;
+  --font-term: 'Cascadia Mono', 'Consolas', 'Courier New', monospace;
+
+  font-family: var(--font-term);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--foreground);
+  background: var(--background);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.dark {
+  /* Dark: CRT terminal — neon green on void black. */
+  --background: #060d0a;
+  --foreground: #c6f7d4;
+  --card: #0b1710;
+  --card-foreground: #c6f7d4;
+  --muted: #10231a;
+  --muted-foreground: #6fbf8b;
+  --accent: #123021;
+  --accent-foreground: #d9ffe6;
+  --border: #1e4630;
+  --input: #1e4630;
+  --ring: #39ff6a;
+  --primary: #39ff6a;
+  --primary-foreground: #04120a;
+  --destructive: #ff5f56;
+  --brand: #39ff6a;
+  --brand-strong: #7dffa5;
+  --glow: rgba(57, 255, 106, 0.45);
+  --term-bg: #0b1710;
+  --term-bar: #10231a;
+  --grid-line: rgba(57, 255, 106, 0.06);
+  --scanline: rgba(57, 255, 106, 0.04);
+  --shadow-pixel: 4px 4px 0 #1e4630;
+  --shadow-pixel-sm: 2px 2px 0 #1e4630;
+
+  color-scheme: dark;
+}
+
+@theme inline {
+  /* Literal stacks (no var() round-trip) so Tailwind inlines them cleanly. */
+  --font-sans: 'Cascadia Mono', 'Consolas', 'Courier New', monospace;
+  --font-mono: 'Cascadia Mono', 'Consolas', 'Courier New', monospace;
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-destructive: var(--destructive);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100svh;
+    background-color: var(--background);
+    /* Pixel-grid backdrop. */
+    background-image:
+      linear-gradient(var(--grid-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size: 24px 24px;
+    background-attachment: fixed;
+  }
+
+  /* CRT scanline overlay, dark mode only, fixed to viewport. */
+  .dark body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0 2px,
+      var(--scanline) 2px 4px
+    );
+  }
+
+  ::selection {
+    background: var(--brand);
+    color: var(--primary-foreground);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border: 2px solid var(--background);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--brand);
+  }
+}
+
+@layer components {
+  .font-pixel {
+    font-family: var(--font-pixel);
+  }
+
+  /* Terminal window frame: title bar + hard pixel border + offset shadow. */
+  .term-card {
+    border: 2px solid var(--border);
+    background: var(--term-bg);
+    box-shadow: var(--shadow-pixel);
+  }
+  .dark .term-card {
+    box-shadow: var(--shadow-pixel), 0 0 24px var(--glow);
+  }
+  .term-card__bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: var(--term-bar);
+    border-bottom: 2px solid var(--border);
+    font-family: var(--font-pixel);
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    color: var(--muted-foreground);
+  }
+  .term-card__dot {
+    width: 8px;
+    height: 8px;
+    background: var(--brand);
+  }
+
+  /* Shell command line: `$ whoami` */
+  .cmd {
+    font-family: var(--font-pixel);
+    font-size: 13px;
+    color: var(--foreground);
+  }
+  .sigil {
+    color: var(--brand);
+    margin-right: 8px;
+  }
+  .dark .sigil {
+    text-shadow: 0 0 8px var(--glow);
+  }
+
+  /* Blinking block cursor. */
+  .cursor {
+    display: inline-block;
+    width: 9px;
+    height: 15px;
+    margin-left: 4px;
+    vertical-align: text-bottom;
+    background: var(--brand);
+    animation: blink 1s steps(2, start) infinite;
+  }
+
+  /* Pixel button: hard border, offset shadow, presses in on click. */
+  .pix-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 2px solid var(--foreground);
+    background: var(--brand);
+    color: var(--primary-foreground);
+    box-shadow: var(--shadow-pixel-sm);
+    font-family: var(--font-pixel);
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 60ms steps(2), box-shadow 60ms steps(2);
+  }
+  .pix-btn:hover {
+    filter: brightness(1.08);
+  }
+  .pix-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 transparent;
+  }
+  .pix-btn--ghost {
+    background: transparent;
+    color: var(--foreground);
+  }
+
+  /* Chip: stack tags, small labels. */
+  .pix-chip {
+    display: inline-block;
+    padding: 3px 8px;
+    border: 1px solid var(--border);
+    background: var(--muted);
+    font-family: var(--font-pixel);
+    font-size: 10px;
+    letter-spacing: 0.5px;
+    color: var(--muted-foreground);
+  }
+
+  .blink {
+    animation: blink 1.2s steps(2, start) infinite;
+  }
+
+  /* Hero title glitch (two offset copies on hover). */
+  .glitch {
+    position: relative;
+  }
+  .glitch::before,
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 80ms steps(2), transform 80ms steps(2);
+  }
+  .glitch:hover::before {
+    opacity: 0.8;
+    color: var(--brand);
+    transform: translate(-2px, -2px);
+  }
+  .glitch:hover::after {
+    opacity: 0.8;
+    color: var(--destructive);
+    transform: translate(2px, 2px);
+  }
+
+  /* Scroll-reveal: v-reveal directive toggles .is-in. */
+  .reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 280ms steps(4), transform 280ms steps(4);
+  }
+  .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Terminal-style list bullets: `>` prefix. */
+  .term-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .term-list li {
+    position: relative;
+    padding-left: 1.25rem;
+  }
+  .term-list li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--brand);
+    font-family: var(--font-pixel);
+  }
+
+  /* Anchor offset under sticky header. */
+  .anchor-target {
+    scroll-margin-top: 72px;
+  }
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .cursor,
+  .blink {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .pix-btn {
+    transition: none;
+  }
+}
