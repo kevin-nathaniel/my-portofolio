@@ -153,7 +153,7 @@
     "ctaLinkedin": "pesan_linkedin"
   },
   "footer": {
-    "rights": "© 2026 Jo Kevin Nathaniel. Hak cipta dilindungi.",
+    "rights": "©2026 Jo Kevin Nathaniel. Hak cipta dilindungi.",
     "note": "Dibangun manual dengan Vue + Vite, bertema terminal."
   }
 }

@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
-import Header from '@/components/header/Header.vue'
+import Header from '@/components/layouts/Header.vue'
+import Footer from './components/layouts/Footer.vue'
 import HomeView from '@/views/index.vue'
 
 const { t } = useI18n()
@@ -19,8 +20,5 @@ watchEffect(() => {
   <main class="mx-auto max-w-5xl px-4 sm:px-6">
     <HomeView />
   </main>
-  <footer class="border-t-2 py-8 text-center text-sm text-muted-foreground">
-    <p>{{ t('footer.rights') }}</p>
-    <p class="mt-1">{{ t('footer.note') }}</p>
-  </footer>
+  <Footer />
 </template>
